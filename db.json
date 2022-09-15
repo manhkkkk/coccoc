@@ -1,19 +1,31 @@
 {
   "animal": [
     {
-      "id": 1,
       "name": "dog",
-      "options": [false, false]
+      "options": [
+        true,
+        true,
+        true
+      ],
+      "id": 1
     },
     {
-      "id": 2,
       "name": "cart",
-      "options": [true, true]
+      "options": [
+        true,
+        false,
+        false
+      ],
+      "id": 2
     },
     {
-      "id": 3,
       "name": "fish",
-      "options": [true, true]
+      "options": [
+        true,
+        false,
+        true
+      ],
+      "id": 3
     }
   ]
 }
