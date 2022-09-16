@@ -1,11 +1,13 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Checkbox = () => {
   const [check, setCheck] = useState([]);
   useEffect(() => {
     const api = async () =>{
-      const {data} = await axios.get('http://localhost:4000/animal')
+      const {data} = await axios.get('https://api-coccoc.herokuapp.com/animal')
       setCheck(data)
     };
     api();
@@ -15,37 +17,60 @@ const Checkbox = () => {
     setCheck(check => check.map(item => {
       if (item.id === id) {
         item.options[optionIndex] = event.target.checked;
-        const currentCheck = item.options[optionIndex]
-        const res = axios.put(`http://localhost:4000/animal/${id}`, 
+        axios.put(`https://api-coccoc.herokuapp.com/animal/${id}`, 
            {
             name: item.name,
             options: [...item.options] 
            }
         )
+				toast('🦄 Wow, tốt lắm!', {
+					position: "top-center",
+					autoClose: 2000,
+					hideProgressBar: false,
+					closeOnClick: true,
+					pauseOnHover: true,
+					draggable: true,
+					progress: undefined,
+					});
       }
       return item;
     }));
   }
   return (
-    <form>
-      <div>
-        {check?.map((item, index) => (
-          <div key={index}>
-            <div>{item.name}</div>
-            <div style={{display: 'flex'}}>option {index + 1}</div>
-            {item.options.map((option, index) =>(
-              <>
-              <input checked={option} className="form-check-input" type="checkbox"
-              onChange={(e) => onHandledOncheck(e, item, index)}/>
-              </>
+    <div className="sticky-table">
+      <table>
+        <thead>
+          <tr>
+            <div className="list">List</div>
+            {check.map((item) => (
+              	<th>{item.name}</th>
             ))}
-          </div>
-        ))}
-      </div>
-      <div>
-        {JSON.stringify(check, null, 2)}
-      </div>
-    </form>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+          <td className="often">{check[0]?.options?.map((item, index ) => (
+            <div key={index} className="oftenChildren">Option {index + 1}</div>
+            ))}
+          </td>
+            {check.map((item, index) => (
+              <>
+                <td>
+                  {item.options.map((option, index) => (
+                    <>
+                    <div className={`option ${option ? 'highlight' : null}`} >
+                    <input checked={option}  type="checkbox"
+                      onChange={(e) => onHandledOncheck(e, item, index)}/>
+                    </div>
+                    </>
+                  ))}
+                </td>
+              </>
+						))}
+          </tr>
+        </tbody>
+      </table>
+    </div>
   )
 }
 

@@ -1,14 +1,182 @@
-body {
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
+img {
+  display: block;
+  max-width: 100%;
+}
+body,
+input,
+button,
+textarea,
+select {
+  outline: none;
+  font-size: 12px;
+  line-height: 1.5;
+  font-family: "Poppins", sans-serif;
+}
+table input {
+  line-height: normal;
+  vertical-align: middle;
+  align-items: center;
+  table-layout:fixed;
+}
+input[type=checkbox] {
+  width: 100%;
+  height: 1.5em;
+  align-items: center;
+}
+body {
+  padding: 20px;
+  background: #2ec194;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    table-layout:fixed;
+    align-items: center;
+}
+  
+table th,
+table td .option {
+  align-content: center;
+  text-align: center;
+  justify-content: center;
+  vertical-align: middle;
+  padding: 15px 30px;
+  border-collapse: collapse;
+  border-spacing: 0;
+  white-space: nowrap;
+  line-height: inherit;
+}
+.option{
+  display: flex;
+  align-items: center;
+}
+table th{
+  border: 1px solid #dfdfdf91;
+  color: #fff;
+  font-size: 14px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+table .list{
+  text-align: center;
+  justify-content: center;
+  vertical-align: middle;
+  padding: 15px 30px;
+  border-collapse: collapse;
+  border-spacing: 0;
+  white-space: nowrap;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: inherit;
+  color: #fff;
+  
+}
+table .often{
+  box-shadow: 9px 9px 16px rgba(189, 189, 189, 0.6),
+  -9px -9px 16px rgba(255, 255, 255, 0.5), inset 10px 10px 15px -10px #c3c3c3,
+  inset -10px -10px 15px -10px #fff;
+}
+table .oftenChildren {
+  text-align: center;
+  justify-content: center;
+  vertical-align: middle;
+  padding: 15px 30px;
+  border-collapse: collapse;
+  border-spacing: 0;
+  white-space: nowrap;
+  line-height: inherit;
+}
+table .oftenChildren {
+  overflow: hidden;
+  height: 90px;
+  font-weight: 600;
+  justify-content: center;
+  margin: 10px;
+  text-align: center;
+  vertical-align: middle;
+  padding: 15px 30px;
+  border-collapse: collapse;
+  border-spacing: 0;
+  white-space: nowrap;
+  font-size: 13px;
+  line-height: inherit;
+  color: #fff;
+  
+  
+}
+table .oftenChildren span{
+  line-height: normal;
+    vertical-align: middle;
+    align-items: center;
+    table-layout: fixed;
+}
+table .oftenChildren{
+  background: #2ec194!important;
+  display: flex;
+  align-items: center;
+  box-shadow: 0px 1px 20px rgb(0 0 0 / 30%);
+}
+table thead{
+  border-bottom: 1px solid #f0f4f8;
+  box-shadow: 9px 9px 16px rgba(189, 189, 189, 0.6),
+  -9px -9px 16px rgba(255, 255, 255, 0.5), inset 10px 10px 15px -10px #c3c3c3,
+  inset -10px -10px 15px -10px #fff;
+}
+table .option {
+  color: #364d67;
+  height: 90px;
+  font-weight: 600;
+  justify-content: center;
+  margin: 10px;
+}
+.option{
+  background: #fff;
+  box-shadow: 9px 9px 16px rgba(189, 189, 189, 0.6),
+    -9px -9px 16px rgba(255, 255, 255, 0.5), inset 10px 10px 15px -10px #c3c3c3,
+    inset -10px -10px 15px -10px #fff;
+}
+.highlight{
+  background: #2ec194!important;
+  box-shadow: 0px 1px 20px rgb(0 0 0 / 30%);
+}
+table tbody tr {
+  border-top: 1px solid #f0f4f8;
+}
+table .user {
+  display: flex;
+  align-items: center;
+  gap: 0 10px;
+}
+table .user img {
+  width: 50px;
+  height: 50px;
+  border-radius: 100rem;
+  object-fit: cover;
+  flex-shrink: 0;
 }
 
+.sticky-table {
+  overflow: auto;
+  border: 1px solid #f0f4f8;
+  box-shadow: 9px 9px 16px rgba(189, 189, 189, 0.6),
+    -9px -9px 16px rgba(255, 255, 255, 0.5), inset 10px 10px 15px -10px #c3c3c3,
+    inset -10px -10px 15px -10px #fff;
+}
+.sticky-table tbody .option:first-child,
+.sticky-table thead .option:first-child {
+  position: sticky;
+  left: 0;
+}
+.sticky-table tbody .option:first-child span {
+  padding-right: 50px;
+}

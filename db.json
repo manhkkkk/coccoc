@@ -5,7 +5,9 @@
       "options": [
         true,
         true,
-        true
+        true,
+        false,
+        false
       ],
       "id": 1
     },
@@ -13,8 +15,10 @@
       "name": "cart",
       "options": [
         true,
-        false,
-        false
+        true,
+        true,
+        true,
+        true
       ],
       "id": 2
     },
@@ -23,9 +27,55 @@
       "options": [
         true,
         false,
+        true,
+        true,
         true
       ],
       "id": 3
+    },
+    {
+      "name": "Alligator",
+      "options": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "id": 4
+    },
+    {
+      "name": "Unicorn",
+      "options": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "id": 5
+    },
+    {
+      "name": "Dragon",
+      "options": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "id": 6
+    },
+    {
+      "name": "Horse",
+      "options": [
+        true,
+        true,
+        true,
+        false,
+        false
+      ],
+      "id": 7
     }
   ]
 }
